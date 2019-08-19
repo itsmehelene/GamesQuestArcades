@@ -5,7 +5,7 @@ class CreateArcades < ActiveRecord::Migration[5.2]
       t.string :address
       t.string :city
       t.integer :zip_code
-      t.references :user, foreign_key: true
+      t.references :owner, foreign_key: { to_table: :users }
 
       t.timestamps
     end

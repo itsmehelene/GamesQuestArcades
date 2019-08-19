@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_19_130824) do
+ActiveRecord::Schema.define(version: 2019_08_19_130900) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,29 +20,33 @@ ActiveRecord::Schema.define(version: 2019_08_19_130824) do
     t.string "address"
     t.string "city"
     t.integer "zip_code"
-    t.bigint "user_id"
+    t.bigint "owner_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_arcades_on_user_id"
+    t.index ["owner_id"], name: "index_arcades_on_owner_id"
   end
 
   create_table "reservations", force: :cascade do |t|
-    t.bigint "arcades_id"
-    t.bigint "users_id"
+    t.bigint "arcade_id"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["arcades_id"], name: "index_reservations_on_arcades_id"
-    t.index ["users_id"], name: "index_reservations_on_users_id"
+    t.index ["arcade_id"], name: "index_reservations_on_arcade_id"
+    t.index ["user_id"], name: "index_reservations_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
     t.string "name"
-    t.string "email"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "arcades", "users"
-  add_foreign_key "reservations", "arcades", column: "arcades_id"
-  add_foreign_key "reservations", "users", column: "users_id"
+  add_foreign_key "arcades", "users", column: "owner_id"
+  add_foreign_key "reservations", "arcades"
+  add_foreign_key "reservations", "users"
 end
