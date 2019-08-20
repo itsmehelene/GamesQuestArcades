@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   end
 
   resources :reservations, only: [:destroy]
+  resources :arcades, only: [:index, :show]
 end
