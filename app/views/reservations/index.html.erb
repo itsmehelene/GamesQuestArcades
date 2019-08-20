@@ -1,10 +1,11 @@
 <h1>Reservation</h1>
 <div>
   <h3><% @reservations.each do |reservation| %>
-      <%= link_to reservation.day, user_reservations_path(reservation) %>
+      <%= reservation.day %>
 
-      <%= link_to 'Delete a reservation',user_reservation_path(reservation) , :method => :delete %>
+      <%= link_to 'Delete a reservation', reservation_path(reservation), method: :delete %>
+      <%= link_to 'Show a reservation', reservation_path(reservation) %>
       <% end %>
   </h3>
-  <%= link_to 'Add a new reservation', new_user_reservation_path %>
+
 </div>
