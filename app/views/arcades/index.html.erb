@@ -1,16 +1,22 @@
 <h1>Arcades list</h1>
 <%= current_user.id %>
 <% @arcades.each do |arcade| %>
-  <h2><%= arcade.name %></h2>
-  <p><%= arcade.address %></p>
-  <p><%= arcade.zip_code %></p>
-  <p><%= arcade.city %></p>
+  <h2><%=arcade.name %></h2>
+  <p><%=arcade.address %></p>
+  <p><%=arcade.zip_code %></p>
+  <p><%=arcade.city %></p>
   <h3>Owner</h3>
   <p><%= arcade.owner.name %></p>
-
+<% if policy(arcade).destroy? %>
   <%= link_to "Delete", arcade_path(arcade),
       method: :delete,
       data: { confirm: "Are you sure?" } %>
+<% end %>
+<% if policy(arcade).edit? %>
+  <%= link_to "Edit", edit_arcade_path(arcade) %>
+<% end %>
+<% end %>
 
-    <%= link_to "Edit", edit_arcade_path(arcade) %>
+<% if policy(Arcade).create? %>
+  <%= link_to "Add a new arcade", new_arcade_path %>
 <% end %>
