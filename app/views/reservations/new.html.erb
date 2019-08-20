@@ -1,0 +1,8 @@
+<h1>My Reservation</h1>
+
+<%= simple_form_for [@reservation, @user] do |f| %>
+  <%= f.association :user %>
+  <%= f.association :arcade %>
+  <%= f.input       :day %>
+  <%= f.button      :submit %>
+<% end %>
