@@ -5,20 +5,20 @@ class ArcadesController < ApplicationController
     @arcades = Arcade.all
   end
 
+  def new
+    @arcade = Arcade.new
+    @arcade.owner = current_user
+  end
+
   def show
     @arcade = Arcade.find(params[:id])
   end
 
-  def new
-    @user = User.find(params[:user_id]) #needs to be an instance variable
-    @arcade.user = @user
-    @arcade = Arcade.new
-  end
-
   def create
     @arcade = Arcade.new(arcades_params)
+    @arcade.owner = current_user
     if @arcade.save
-      redirect_to @arcade, notice: 'Arcade created.'
+      redirect_to arcades_path, notice: 'Arcade created.'
     else
       render :new
     end
@@ -46,6 +46,6 @@ class ArcadesController < ApplicationController
   end
 
   def arcades_params
-    params.require(:arcade).permit(:name, :adress, :city, :zip_code)
+    params.require(:arcade).permit(:name, :address, :city, :zip_code)
   end
 end
