@@ -1,7 +1,9 @@
-<%= simple_form_for [current_user, @arcade] do |f| %>
-  <%= f.text_field :name %>
-  <%= f.text_field :address %>
-  <%= f.text_field :zip_code %>
-  <%= f.text_field :city %>
+<%= simple_form_for [@arcade] do |f| %>
+  <%= f.text_field :name, placeholder: 'Name' %>
+  <%= f.text_field :address, placeholder: 'Adress' %>
+  <%= f.text_field :zip_code, placeholder: 'Zip Code' %>
+  <%= f.text_field :city, placeholder: 'City' %>
+  <%= f.input :photo %>
+  <%= f.input :photo_cache, as: :hidden %>
   <%= f.submit %>
 <% end %>
