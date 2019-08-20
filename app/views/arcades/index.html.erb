@@ -1,12 +1,10 @@
 <h1>Arcades list</h1>
-<%= current_user %>
+
 <% @arcades.each do |arcade| %>
   <h2><%=arcade.name %></h2>
   <p><%=arcade.address %></p>
   <p><%=arcade.zip_code %></p>
   <p><%=arcade.city %></p>
-  <h3>Owner</h3>
-  <p><%= arcade.owner.name %></p>
   <%= link_to "See More", arcade_path(arcade) %>
 
 <% if policy(arcade).destroy? %>
