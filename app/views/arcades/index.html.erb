@@ -7,6 +7,8 @@
   <p><%=arcade.city %></p>
   <h3>Owner</h3>
   <p><%= arcade.owner.name %></p>
+  <%= link_to "See More", arcade_path(arcade) %>
+
 <% if policy(arcade).destroy? %>
   <%= link_to "Delete", arcade_path(arcade),
       method: :delete,
@@ -20,3 +22,6 @@
 <% if policy(Arcade).create? %>
   <%= link_to "Add a new arcade", new_arcade_path %>
 <% end %>
+
+
+<p><%= link_to "Add an Arcade", new_arcade_path %></p>

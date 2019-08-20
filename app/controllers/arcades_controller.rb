@@ -46,6 +46,6 @@ class ArcadesController < ApplicationController
   end
 
   def arcades_params
-    params.require(:arcade).permit(:name, :address, :city, :zip_code)
+    params.require(:arcade).permit(:name, :address, :city, :zip_code, :photo)
   end
 end
