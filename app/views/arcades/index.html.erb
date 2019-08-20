@@ -1,5 +1,5 @@
 <h1>Arcades list</h1>
-<%= current_user.id %>
+<%= current_user %>
 <% @arcades.each do |arcade| %>
   <h2><%=arcade.name %></h2>
   <p><%=arcade.address %></p>
@@ -23,5 +23,3 @@
   <%= link_to "Add a new arcade", new_arcade_path %>
 <% end %>
 
-
-<p><%= link_to "Add an Arcade", new_arcade_path %></p>
