@@ -3,20 +3,23 @@ class ReservationsController < ApplicationController
   before_action :set_reservation, only: %i[show]
 
   def index
-    @reservations = Reservation.all
+     @reservations = policy_scope(Reservation).order(created_at: :desc)
   end
 
   def new
     @reservation = Reservation.new
+    authorize @reservation
   end
 
   def show
+    authorize @reservation
   end
 
   def create
     @reservation = Reservation.new(reservation_params)
     @reservation.user = current_user
     @reservation.arcade = @arcade
+    authorize @reservation
 
     if @reservation.save
       redirect_to @reservation
@@ -29,6 +32,7 @@ class ReservationsController < ApplicationController
   def destroy
     @reservation = Reservation.find(params[:id])
     @reservation.destroy
+    authorize @reservation
     redirect_to reservations_path
   end
 
