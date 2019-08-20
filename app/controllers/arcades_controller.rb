@@ -2,21 +2,22 @@ class ArcadesController < ApplicationController
   before_action :set_arcade, only: [:show, :edit, :update, :destroy]
 
   def index
-    @arcades = Arcade.all
+    @arcades = policy_scope(Arcade).order(created_at: :desc)
   end
 
   def new
     @arcade = Arcade.new
     @arcade.owner = current_user
+    authorize @arcade
   end
 
   def show
-    @arcade = Arcade.find(params[:id])
   end
 
   def create
     @arcade = Arcade.new(arcades_params)
     @arcade.owner = current_user
+    authorize @arcade
     if @arcade.save
       redirect_to arcades_path, notice: 'Arcade created.'
     else
@@ -25,7 +26,6 @@ class ArcadesController < ApplicationController
   end
 
   def destroy
-    @arcade = Arcade.find(params[:id])
     @arcade.destroy
     redirect_to arcades_path, notice: 'Arcade was successfully destroyed.'
   end
@@ -35,7 +35,6 @@ class ArcadesController < ApplicationController
 
   def update
     @arcade.update(arcades_params)
-
     redirect_to arcade_path(@arcade)
   end
 
@@ -43,6 +42,7 @@ class ArcadesController < ApplicationController
 
   def set_arcade
     @arcade = Arcade.find(params[:id])
+    authorize @arcade
   end
 
   def arcades_params
