@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :reservations
-  has_many :arcades
+  has_many :arcades, foreign_key: :owner_id
 
   validates :name, presence: true
 end
