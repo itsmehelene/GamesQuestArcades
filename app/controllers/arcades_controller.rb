@@ -1,5 +1,7 @@
 class ArcadesController < ApplicationController
   before_action :set_arcade, only: [:show, :edit, :update, :destroy]
+  skip_before_action :authenticate_user!, only: [:index]
+
 
   def index
     @arcades = policy_scope(Arcade).order(created_at: :desc)

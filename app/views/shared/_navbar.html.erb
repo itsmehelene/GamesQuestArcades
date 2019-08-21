@@ -16,7 +16,7 @@
             <%= link_to "Home", arcades_path, class: "dropdown-item" %>
 
           <% if user_signed_in? %>
-          <%= link_to "My profil", user_path(current_user), class: "dropdown-item" %>
+          <%= link_to "My profil", my_profil_path, class: "dropdown-item" %>
             <%= link_to('Logout', destroy_user_session_path, method: :delete, class: "dropdown-item") %>
 
           <% else %>
