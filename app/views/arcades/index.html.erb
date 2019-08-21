@@ -25,7 +25,7 @@
 
             <div class='card-room-options'>
 
-              <button type="button" class="btn-yellow"><%= link_to "See More", arcade_path(arcade) %></button>
+              <button type="button" class="btn-blue"><%= link_to "See More", arcade_path(arcade) %></button>
 
 
               <% if policy(arcade).destroy? %>
@@ -35,7 +35,8 @@
               <% end %>
 
               <% if policy(arcade).edit? %>
-              <%= link_to "Edit", edit_arcade_path(arcade) %>
+              <button type="button" class="btn-yellow"><%= link_to "Edit", edit_arcade_path(arcade) %></button>
+
             </div>
           </div>
         </div>
