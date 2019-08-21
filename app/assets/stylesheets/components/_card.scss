@@ -10,7 +10,6 @@ body .container-all {
 .card-room {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  flex-grow: 1;
   margin: 10px;
   height: 100%;
 }
