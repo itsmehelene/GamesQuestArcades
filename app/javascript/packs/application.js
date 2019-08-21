@@ -21,3 +21,6 @@ import { initMapbox } from '../plugins/init_mapbox';
 
 initMapbox();
 console.log('Hello World from Webpacker')
+
+import "bootstrap";
+
