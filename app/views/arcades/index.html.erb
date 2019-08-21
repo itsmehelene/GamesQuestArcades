@@ -4,8 +4,7 @@
 <% @arcades.each do |arcade| %>
   <h2><%=arcade.name %></h2>
   <p><%=arcade.address %></p>
-  <p><%=arcade.zip_code %></p>
-  <p><%=arcade.city %></p>
+
   <%= link_to "See More", arcade_path(arcade) %>
 
 <% if policy(arcade).destroy? %>
