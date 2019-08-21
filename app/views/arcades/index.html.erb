@@ -1,16 +1,18 @@
   <h1>Arcades list</h1>
 <div class="container_cards">
 
-  <div class="card-room col-12 col-sm-4 col-sm-3">
+  <div class="card-room col-12 col-sm-8 col-sm-4">
     <% @arcades.each do |arcade| %>
       <div class='card-room-infos'>
-      <h2><%=arcade.name %></h2>
-      <%= cl_image_tag arcade.photo, height: 200, width: 300, crop: :fill %>
-        <p><%=arcade.address %></p>
-        <p><%=arcade.zip_code %></p>
-        <p><%=arcade.city %></p>
-        <h2 class="card-room-pricing">£99.99</h2>
-      </div>
+        <div class='title_photo'>
+          <h2><%=arcade.name %></h2>
+          <%= cl_image_tag arcade.photo, height: 200, width: 300, crop: :fill %>
+        </div>
+
+        <div class='infos'>
+          <p><%=arcade.address %></p>
+          <h2 class="card-room-pricing"><%=arcade.price %>€</h2>
+        </div>
         <div class='card-room-options'>
           <%= link_to "See More", arcade_path(arcade) %>
 
@@ -22,6 +24,7 @@
 
           <% if policy(arcade).edit? %>
           <%= link_to "Edit", edit_arcade_path(arcade) %>
+        </div>
           <% end %>
         </div>
     <% end %>

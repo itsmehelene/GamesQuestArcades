@@ -5,38 +5,27 @@
 
 }
 
-.card-room h2 {
-  font-size: 16px;
-  font-weight: bold;
-  margin: 0;
-}
+// .card-room > h2{
 
-.card-room p {
-  font-size: 12px;
-  opacity: .7;
-  margin: 0;
-}
-
+// }
 
 .card-room .card-room-infos {
   padding: 16px;
   display: flex;
-  justify-content: space-between;
+  // justify-content: space-between;
   align-items: flex-end;
   position: relative;
-}
-
-.card-room-infos .card-room-user {
-  position: absolute;
-  right: 16px;
-  top: -20px;
-  width: 40px;
-
 }
 
 .card-room-infos{
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 15px;
+  margin: 15px 0;
 
 }
+
+// .card-room-options {
+//   display:flex;
+
+// }
 }
