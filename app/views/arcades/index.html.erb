@@ -4,11 +4,8 @@
 <% @arcades.each do |arcade| %>
   <h2><%=arcade.name %></h2>
   <p><%=arcade.address %></p>
-<<<<<<< HEAD
   <p><%=arcade.price %></p>
-=======
 
->>>>>>> master
   <%= link_to "See More", arcade_path(arcade) %>
 
 <% if policy(arcade).destroy? %>
@@ -30,5 +27,5 @@
   style="width: 100%;
   height: 600px;"
   data-markers="<%= @markers.to_json %>"
-  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+  data-mapbox-api-key="<%= ENV['MAP_API_KEY'] %>"
 ></div>
