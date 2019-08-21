@@ -1,4 +1,5 @@
   <h1>Arcades list</h1>
+
 <div class="container_cards">
 
   <div class="card-room col-12 col-sm-8 col-sm-4">
@@ -42,8 +43,10 @@
     <% end %>
   </div>
 
-  <% if policy(Arcade).create? %>
-    <%= link_to "Add a new arcade", new_arcade_path %>
-  <% end %>
-</div>
-
+<div
+  id="map"
+  style="width: 50%;
+  height: 600px;"
+  data-markers="<%= @markers.to_json %>"
+  data-mapbox-api-key="<%= ENV['MAP_API_KEY'] %>"
+></div>
