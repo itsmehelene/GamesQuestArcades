@@ -1,30 +1,29 @@
-<h1>Arcades list</h1>
+  <h1>Arcades list</h1>
+  <% @arcades.each do |arcade| %>
+    <h2><%=arcade.name %></h2>
+    <p><%=arcade.address %></p>
+    <p><%=arcade.price %></p>
 
+    <%= link_to "See More", arcade_path(arcade) %>
 
-<% @arcades.each do |arcade| %>
-  <h2><%=arcade.name %></h2>
-  <p><%=arcade.address %></p>
-  <p><%=arcade.price %></p>
+    <% if policy(arcade).destroy? %>
+      <%= link_to "Delete", arcade_path(arcade),
+          method: :delete,
+          data: { confirm: "Are you sure?" } %>
+    <% end %>
+    <% if policy(arcade).edit? %>
+      <%= link_to "Edit", edit_arcade_path(arcade) %>
+    <% end %>
+  <% end %>
 
-  <%= link_to "See More", arcade_path(arcade) %>
+  <% if policy(Arcade).create? %>
+    <%= link_to "Add a new arcade", new_arcade_path %>
+  <% end %>
 
-<% if policy(arcade).destroy? %>
-  <%= link_to "Delete", arcade_path(arcade),
-      method: :delete,
-      data: { confirm: "Are you sure?" } %>
-<% end %>
-<% if policy(arcade).edit? %>
-  <%= link_to "Edit", edit_arcade_path(arcade) %>
-<% end %>
-<% end %>
-
-<% if policy(Arcade).create? %>
-  <%= link_to "Add a new arcade", new_arcade_path %>
-<% end %>
 
 <div
   id="map"
-  style="width: 100%;
+  style="width: 50%;
   height: 600px;"
   data-markers="<%= @markers.to_json %>"
   data-mapbox-api-key="<%= ENV['MAP_API_KEY'] %>"
