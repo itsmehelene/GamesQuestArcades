@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_21_091541) do
+ActiveRecord::Schema.define(version: 2019_08_21_093537) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,8 @@ ActiveRecord::Schema.define(version: 2019_08_21_091541) do
     t.datetime "updated_at", null: false
     t.string "photo"
     t.float "price"
+    t.float "latitude"
+    t.float "longitude"
     t.index ["owner_id"], name: "index_arcades_on_owner_id"
   end
 

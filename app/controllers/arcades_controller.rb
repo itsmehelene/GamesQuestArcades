@@ -3,6 +3,14 @@ class ArcadesController < ApplicationController
 
   def index
     @arcades = policy_scope(Arcade).order(created_at: :desc)
+    @arcades = Arcade.geocoded
+
+    @markers = @arcades.map do |arcade|
+      {
+        lat: arcade.latitude,
+        lng: arcade.longitude
+      }
+    end
   end
 
   def new
