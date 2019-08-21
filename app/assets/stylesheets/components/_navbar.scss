@@ -1,6 +1,9 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
+  background-image: url('https://jeux-jeu.fr/jeux-gratuit/arcade/pacman.png');
+
+
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -9,10 +12,4 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
-}
-
-.avatar-large {
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
 }
