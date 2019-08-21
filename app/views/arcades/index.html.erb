@@ -1,8 +1,7 @@
   <h1>Arcades list</h1>
 
 <div class="container-all">
-
-    <div class="card-room">
+  <div class="card-room">
       <% @arcades.each do |arcade| %>
         <div class='card-room-infos'>
 
@@ -34,14 +33,14 @@
 
                 <% if policy(arcade).edit? %>
                 <button type="button" class="btn-yellow"><%= link_to "Edit", edit_arcade_path(arcade) %></button>
+                <% end %>
               </div>
 
             </div>
           </div>
-          <% end %>
+
         </div>
       <% end %>
-      <%= link_to "Add a new arcade room", new_arcade_path %>
   </div>
   <div
     id="map"
