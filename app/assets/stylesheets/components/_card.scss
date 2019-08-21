@@ -1,31 +1,41 @@
+h1{
+  margin: auto 20px;
+}
+
 .container_cards{
   .card-room {
   overflow: hidden;
   background: white;
+  margin: 0 14px;
 
 }
 
-// .card-room > h2{
+.title {
+   display: flex;
+  justify-content: space-between;
+}
 
-// }
-
-.card-room .card-room-infos {
-  padding: 16px;
+.infos{
   display: flex;
-  // justify-content: space-between;
-  align-items: flex-end;
-  position: relative;
+  justify-content: space-between;
+  width: 100%;
 }
 
-.card-room-infos{
+.infos_options{
+  display:flex;
+}
+
+.card-room-infos {
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 15px;
+  padding: 16px;
   margin: 15px 0;
+  position: relative;
+  }
 
+.card-room-options {
+display:flex;
+align-self: flex-end;
 }
 
-// .card-room-options {
-//   display:flex;
-
-// }
 }

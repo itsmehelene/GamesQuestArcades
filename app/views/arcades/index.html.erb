@@ -1,33 +1,44 @@
   <h1>Arcades list</h1>
 <div class="container_cards">
 
-
   <div class="card-room col-12 col-sm-8 col-sm-4">
     <% @arcades.each do |arcade| %>
       <div class='card-room-infos'>
-        <div class='title_photo'>
-          <h2><%=arcade.name %></h2>
-          <%= cl_image_tag arcade.photo, height: 200, width: 300, crop: :fill %>
-        </div>
 
-        <div class='infos'>
-          <p><%=arcade.address %></p>
+        <div class='title'>
+          <h2><%=arcade.name %></h2>
           <h2 class="card-room-pricing"><%=arcade.price %>€</h2>
         </div>
-        <div class='card-room-options'>
-          <%= link_to "See More", arcade_path(arcade) %>
 
-          <% if policy(arcade).destroy? %>
-          <%= link_to "Delete", arcade_path(arcade),
-            method: :delete,
-            data: { confirm: "Are you sure?" } %>
-          <% end %>
+        <div class='infos_options'>
 
-          <% if policy(arcade).edit? %>
-          <%= link_to "Edit", edit_arcade_path(arcade) %>
+          <div class='photo'>
+          <%= cl_image_tag arcade.photo, height: 200, width: 300, crop: :fill %>
+          </div>
+
+          <div class='infos'>
+
+            <div class='address'>
+              <p><%=arcade.address %></p>
+            </div>
+
+            <div class='card-room-options'>
+              <%= link_to "See More", arcade_path(arcade) %>
+
+              <% if policy(arcade).destroy? %>
+              <%= link_to "Delete", arcade_path(arcade),
+                method: :delete,
+                data: { confirm: "Are you sure?" } %>
+              <% end %>
+
+              <% if policy(arcade).edit? %>
+              <%= link_to "Edit", edit_arcade_path(arcade) %>
+            </div>
+          </div>
         </div>
-          <% end %>
-        </div>
+
+        <% end %>
+      </div>
     <% end %>
   </div>
 
