@@ -8,7 +8,9 @@ class ArcadesController < ApplicationController
     @markers = @arcades.map do |arcade|
       {
         lat: arcade.latitude,
-        lng: arcade.longitude
+        lng: arcade.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { arcade: arcade }),
+        image_url: helpers.asset_url('packman.png')
       }
     end
   end
