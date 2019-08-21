@@ -1,0 +1,41 @@
+h1{
+  margin: auto 20px;
+}
+
+.container_cards{
+  .card-room {
+  overflow: hidden;
+  background: white;
+  margin: 0 14px;
+
+}
+
+.title {
+   display: flex;
+  justify-content: space-between;
+}
+
+.infos{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.infos_options{
+  display:flex;
+}
+
+.card-room-infos {
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 15px;
+  padding: 16px;
+  margin: 15px 0;
+  position: relative;
+  }
+
+.card-room-options {
+display:flex;
+align-self: flex-end;
+}
+
+}

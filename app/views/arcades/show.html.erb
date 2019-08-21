@@ -1,5 +1,9 @@
 <h2> <%= @arcade.name %> </h2>
-<p> <%= @arcade.address %></p>
-<%= cl_image_tag @arcade.photo, height: 300, width: 400, crop: :fill %>
+  <%= cl_image_tag @arcade.photo, height: 300, width: 400, crop: :fill %>
+  <p> <%= @arcade.address %></p>
+  <p><%= @arcade.price %></p>
 
-<%= link_to 'Reserver cette arcade',  new_arcade_reservation_path(@arcade)  %>
+  <%= link_to 'Reserver cette arcade',  new_arcade_reservation_path(@arcade)  %>
+  <br>
+  <%= link_to 'Back to the list', arcades_path %>
+
