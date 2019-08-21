@@ -1,0 +1,10 @@
+<h1><%= @reservation.arcade.name %></h1>
+
+<div>
+<%= cl_image_tag @reservation.arcade.photo, height: 300, width: 400, crop: :fill %>
+  <p><%= @reservation.day %></p>
+  <%= link_to 'Delete an reservation', reservation_path(@reservation), :method => :delete %>
+</div>
+
+<br>
+<%= link_to 'Back', reservations_path %>
