@@ -24,12 +24,14 @@
             </div>
 
             <div class='card-room-options'>
-              <%= link_to "See More", arcade_path(arcade) %>
+
+              <button type="button" class="btn-yellow"><%= link_to "See More", arcade_path(arcade) %></button>
+
 
               <% if policy(arcade).destroy? %>
-              <%= link_to "Delete", arcade_path(arcade),
+             <button type="button" class="btn btn-red"> <%= link_to "Delete", arcade_path(arcade),
                 method: :delete,
-                data: { confirm: "Are you sure?" } %>
+                data: { confirm: "Are you sure?" } %></button>
               <% end %>
 
               <% if policy(arcade).edit? %>
