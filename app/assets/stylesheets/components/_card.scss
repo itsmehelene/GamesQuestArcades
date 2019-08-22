@@ -3,11 +3,10 @@ h1{
 }
 
 body .container-all {
-// body .container {
   margin: 0 auto;
 }
 
-.cards-arcade {
+.cards-room {
   height: 150px;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -16,6 +15,7 @@ body .container-all {
 .title {
   display: flex;
   justify-content: space-between;
+  padding: 0 15px;
 }
 
 
@@ -34,23 +34,22 @@ body .container-all {
 }
 
 .card-room-infos {
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
+  margin: 10px;
+  padding: 20px;
 }
 
-.card-arcade-options {
+.card-room-options {
   display:flex;
   align-self: flex-end;
 }
 
 #map {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   margin:10px;
   border-radius: 5px;
-  height: 600px;
-}
-
-.mapping{
-  margin:0 -15px;
+  height: 100%;
 }
 
 @media screen and (min-width: 900px) {
@@ -75,7 +74,7 @@ body .container-all {
 }
 
 @media screen and (max-width: 576px) {
-  .cards-arcade {
+  .cards-room {
     grid-template-columns: 1fr;
   }
   #map {
