@@ -27,15 +27,6 @@
 
                 <button type="button" class="btn-blue"><%= link_to "See More >", arcade_path(arcade) %></button>
 
-                <% if policy(arcade).destroy? %>
-                <button type="button" class="btn btn-red"> <%= link_to "Delete", arcade_path(arcade),
-                method: :delete,
-                data: { confirm: "Are you sure?" } %></button>
-                <% end %>
-
-                <% if policy(arcade).edit? %>
-                <button type="button" class="btn btn-yellow"><%= link_to "Edit", edit_arcade_path(arcade) %></button>
-                <% end %>
               </div>
 
             </div>
