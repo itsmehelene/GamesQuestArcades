@@ -6,12 +6,12 @@ class ArcadesController < ApplicationController
     @arcades = policy_scope(Arcade).order(created_at: :desc)
     @arcades = Arcade.geocoded
 
-          if params[:q].present?
+    if params[:q].present?
+      @arcades = @arcades.search(params[:q])
+    end
 
-      @arcades = Arcade.search(params[:q])
-
-    else
-      @arcades = Arcade.all
+    if params[:max_price].present?
+      @arcades = @arcades.where('price < ?', params[:max_price])
     end
 
     @markers = @arcades.map do |arcade|
