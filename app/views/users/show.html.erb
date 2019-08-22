@@ -1,29 +1,38 @@
-<div class="container d-flex" style="margin: 20vh 40vh;">
-  <div class="profil">
-    <h3> Welcome </h3>
-    <p>Profil Name: <%=current_user.name%></p>
-    <p>Email: <%=current_user.email%></p>
+<div class="container" style="margin: 20vh 40vh;">
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))">
+    <div class="card-photo">
+      <%=avatar_image_tag current_user,class:"img_user avatar"%>
+    </div>
+    <div class="card-product-infos">
+      <p>Profil Name: <%=current_user.name%></p>
+      <p>Email: <%=current_user.email%></p>
+    </div>
   </div>
 
+<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))">
   <div class="reservation">
-  <h4>Your reservations</h4>
-<% res = Reservation.where("user_id =#{current_user.id}")%>
-<ul>
-<% res.each do |r|%>
-  <li>you have a reservation at
-  <%=r.arcade.name%> and the date is
-  <%=r.day%>;The price is
-  <%=r.arcade.price%></li>
-<%end%>
-</ul>
+    <h4>Your reservations</h4>
+    <% res = Reservation.where("user_id =#{current_user.id}")%>
+    <ul>
+    <% res.each do |r|%>
+      <li>you have a reservation at
+      <%=r.arcade.name%> and the date is
+      <%=r.day%>;The price is
+      <%=r.arcade.price%></li>
+    <%end%>
+    </ul>
+  </div>
 </div>
 
-<div class="arcades">
-  <h4>Your Arcades</h4>
-<% arcades = Arcade.where("owner_id =#{current_user.id}")%>
-<ul>
-<% arcades.each do |arcade|%>
-  <li><%=arcade.name%> </li>
-<%end%>
-</ul>
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))">
+  <div class="arcades">
+    <h4>Your Arcades</h4>
+    <% arcades = Arcade.where("owner_id =#{current_user.id}")%>
+    <ul>
+    <% arcades.each do |arcade|%>
+      <li><%=arcade.name%> </li>
+    <%end%>
+    </ul>
+  </div>
+</div>
 </div>
