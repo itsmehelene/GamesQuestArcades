@@ -3,6 +3,13 @@
   <%= image_tag "https://i.pinimg.com/originals/1a/23/ca/1a23ca73f33f1a06262bdced6d5d66cb.png" %>
   <% end %>
 
+
+        <form action="<%= root_path %>" method="get" class="form-inline">
+          <input type="text" name="q" class="form-control" placeholder="City" value="<%= params[:q] %>">
+          <input type="float" name="max_price" class="form-control" placeholder="Maximum price" value="<%= params[:max_price] %>">
+          <input type="submit" value="Search" class="btn btn-light">
+        </form>
+
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>

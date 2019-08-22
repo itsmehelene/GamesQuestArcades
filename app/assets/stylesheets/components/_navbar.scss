@@ -1,9 +1,10 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
-  background-image: url('https://www.gif-maniac.com/gifs/45/44561.gif');
-  background-position: center;
-  background-size: cover;
+
+
+  .form-inline {
+  align-items: flex-end;
+}
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -13,3 +14,5 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+
+
