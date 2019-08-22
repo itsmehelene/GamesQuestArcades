@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.3'
-
+gem 'pg_search'
 gem 'geocoder'
 gem 'carrierwave', '~> 1.2'
 gem 'cloudinary', '~> 1.9.1'
