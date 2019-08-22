@@ -4,12 +4,6 @@ body .container-all {
   color: gray;
 }
 
-.cards-room {
-  height: 150px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-}
-
 .title {
   display: flex;
   justify-content: space-between;
@@ -35,6 +29,8 @@ body .container-all {
   border-radius: 5px;
   margin: 10px;
   padding: 20px;
+
+
   // max-height: 35vh;
 }
 
@@ -63,6 +59,8 @@ body .container-all {
     width: 66%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    align-items: start;
+    grid-template-rows: min-content;
   }
 
 }
@@ -77,6 +75,7 @@ body .container-all {
     width: 100%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: min-content;
   }
 
 }
@@ -91,6 +90,7 @@ body .container-all {
     width: 100%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: min-content;
   }
 
 }
