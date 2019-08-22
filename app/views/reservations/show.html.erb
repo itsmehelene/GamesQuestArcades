@@ -1,10 +1,19 @@
-<h1><%= @reservation.arcade.name %></h1>
-
-<div>
-<%= cl_image_tag @reservation.arcade.photo, height: 300, width: 400, crop: :fill %>
-  <p><%= @reservation.day %></p>
-  <%= link_to 'Delete an reservation', reservation_path(@reservation), :method => :delete %>
+<div class="banner" style="background-image: url('<%= cl_image_path @reservation.arcade.photo, height: 300, width: 400, crop: :fill,class: "banner-img"%>')">
+  <div class="container">
+    <h1>Reservation is done!</h1>
+  </div>
 </div>
 
-<br>
-<%= link_to 'Back', reservations_path %>
+<div class="carding">
+  <div class="card-show">
+    ADDRESS:   <%= @reservation.arcade.address %><br>
+    DATE:  <%= @reservation.day %>
+  </div>
+
+
+  <div class="category">
+    <%= link_to 'Delete an reservation', reservation_path(@reservation), :method => :delete,class:"btn btn-light"  %>
+    <%= link_to 'Go to main page', arcades_path,class:"btn btn-light" %>
+  </div>
+</div>
+
