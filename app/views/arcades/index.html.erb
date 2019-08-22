@@ -23,7 +23,7 @@
               </div>
 
               <div class='card-room-options'>
-                <button type="button" class="btn-blue"><%= link_to "See More", arcade_path(arcade) %></button>
+                <button type="button" class="btn-blue"><%= link_to "See More >", arcade_path(arcade) %></button>
 
                 <% if policy(arcade).destroy? %>
                 <button type="button" class="btn btn-red"> <%= link_to "Delete", arcade_path(arcade),
