@@ -3,7 +3,7 @@ module UsersHelper
     if user.photo.present?
       cl_image_tag user.photo, options
     else
-      image_tag 'mario.jpeg', options
+      image_tag 'mario.jpg', options
     end
   end
 end
