@@ -1,4 +1,6 @@
 class Arcade < ApplicationRecord
+  include PgSearch::Model
+
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
   mount_uploader :photo, PhotoUploader
@@ -8,4 +10,10 @@ class Arcade < ApplicationRecord
   validates :name, presence: true
   validates :price, presence: true
   validates :photo, presence: true
+
+  pg_search_scope :search,
+                  against: [:name, :address],
+                  using: {
+                    tsearch: { prefix: true }
+                  }
 end
