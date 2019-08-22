@@ -3,19 +3,18 @@ h1{
 }
 
 body .container-all {
-  display: flex;
-  margin: 0;
+// body .container {
+  margin: 0 auto;
 }
 
-.card-room {
+.cards-arcade {
+  height: 150px;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  margin: 10px;
-  height: 100%;
 }
 
 .title {
-   display: flex;
+  display: flex;
   justify-content: space-between;
 }
 
@@ -25,22 +24,63 @@ body .container-all {
 }
 
 .infos{
-  display: flex;
   justify-content: space-between;
-  padding: 13px;
+  padding: 8px;
 }
+
+.photo{
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
 .card-room-infos {
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  border-radius: 15px;
+  border-radius: 5px;
   padding: 16px;
   margin: 10px;
-  }
+}
 
-.card-room-options {
-display:flex;
-align-self: flex-end;
+.card-arcade-options {
+  display:flex;
+  align-self: flex-end;
 }
 
 #map {
   margin:10px;
+  border-radius: 5px;
+  height: 600px;
+}
+
+.mapping{
+  margin:0 -15px;
+}
+
+@media screen and (min-width: 900px) {
+  .container-all {
+    display:flex;
+  }
+
+  #map {
+    width: 34%;
+  }
+
+  .card-room {
+    width: 66%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+
+  #map {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .cards-arcade {
+    grid-template-columns: 1fr;
+  }
+  #map {
+    display: block;
+  }
 }
