@@ -1,5 +1,4 @@
 class Arcade < ApplicationRecord
-  include PgSearch::Model
 
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
@@ -11,8 +10,10 @@ class Arcade < ApplicationRecord
   validates :price, presence: true
   validates :photo, presence: true
 
+  include PgSearch::Model
+
   pg_search_scope :search,
-                  against: [:name, :address],
+                  against: [:name, :address, :price],
                   using: {
                     tsearch: { prefix: true }
                   }
