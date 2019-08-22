@@ -56,6 +56,7 @@ body .container-all {
   }
    #map {
     width: 34%;
+    display: block;
   }
 
   .card-room {
@@ -63,6 +64,7 @@ body .container-all {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
   }
+
 }
 
 @media screen and (max-width: 1550px) {

@@ -1,38 +1,53 @@
-<div class="container" style="margin: 20vh 40vh;">
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))">
-    <div class="card-photo">
-      <%=avatar_image_tag current_user,class:"img_user avatar"%>
-    </div>
-    <div class="card-product-infos">
-      <p>Profil Name: <%=current_user.name%></p>
-      <p>Email: <%=current_user.email%></p>
+<div class="arcades-show container col-6">
+  <div class=" row justify-content-start col-5 my-5">
+    <div class="card-category d-flex">
+      <div class="card-photo ">
+        <%=avatar_image_tag current_user,class:"img_user avatar"%>
+      </div>
+      <div class="card-product-infos">
+        <span>Profil Name: <%=current_user.name%></span>
+        <span>Email: <%=current_user.email%></span>
+      </div>
     </div>
   </div>
 
-<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))">
-  <div class="reservation">
-    <h4>Your reservations</h4>
-    <% res = Reservation.where("user_id =#{current_user.id}")%>
-    <ul>
-    <% res.each do |r|%>
-      <li>you have a reservation at
-      <%=r.arcade.name%> and the date is
-      <%=r.day%>;The price is
-      <%=r.arcade.price%></li>
-    <%end%>
-    </ul>
+  <div class="row justify-content-center my-5">
+    <div class="card-category reservation col-5">
+      <h4>My reservations</h4>
+      <% res = Reservation.where("user_id =#{current_user.id}")%>
+      <ul>
+      <% res.each do |r|%>
+        <li>you have a reservation at
+        <%=r.arcade.name%> and the date is
+        <%=r.day%>;The price is
+        <%=r.arcade.price%></li>
+      <%end%>
+      </ul>
+    </div>
   </div>
-</div>
 
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))">
-  <div class="arcades">
-    <h4>Your Arcades</h4>
-    <% arcades = Arcade.where("owner_id =#{current_user.id}")%>
-    <ul>
-    <% arcades.each do |arcade|%>
-      <li><%=arcade.name%> </li>
-    <%end%>
-    </ul>
+  <div class="row justify-content-end my-5">
+    <div class="card-category arcades col-5">
+      <h4>My Arcades</h4>
+      <% arcades = Arcade.where("owner_id =#{current_user.id}")%>
+      <ul>
+      <% arcades.each do |arcade|%>
+
+      <li><%= link_to arcade.name, arcade_path(arcade) %>
+      <% if policy(arcade).destroy? %>
+                  <button type="button" class="btn btn-red"> <%= link_to "Delete", arcade_path(arcade),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" } %></button>
+                  <% end %>
+
+                  <% if policy(arcade).edit? %>
+                  <button type="button" class="btn btn-yellow"><%= link_to "Edit", edit_arcade_path(arcade) %></button>
+                  <% end %>
+
+      </li>
+
+      <%end%>
+      </ul>
+    </div>
   </div>
-</div>
 </div>

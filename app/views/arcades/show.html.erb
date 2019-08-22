@@ -1,9 +1,17 @@
-<h2> <%= @arcade.name %> </h2>
-  <%= cl_image_tag @arcade.photo, height: 300, width: 400, crop: :fill %>
-  <p> <%= @arcade.address %></p>
-  <p><%= @arcade.price %></p>
+<div class="banner" style="background-image: url('<%= cl_image_path @arcade.photo, height: 300, width: 400, crop: :fill,class: "banner-img"%>')">
+  <div class="container">
+    <h1><%= @arcade.name %></h1>
+  </div>
+</div>
 
-  <%= link_to 'Reserver cette arcade',  new_arcade_reservation_path(@arcade)  %>
-  <br>
-  <%= link_to 'Back to the list', arcades_path %>
+<div class="cardo">
+  <div class="card-show">
+    ADDRESS:   <%= @arcade.address %><br>
+    PRICE:  <%= @arcade.price %>
+  </div>
 
+
+  <div class="category">
+    <%= link_to 'Reserve',  new_arcade_reservation_path(@arcade),class:"btn btn-light"  %>
+  </div>
+</div>
