@@ -1,8 +1,7 @@
 <%= simple_form_for [ @arcade] do |f| %>
-  <%= f.text_field :name %>
-  <%= f.text_field :address %>
-  <%= f.text_field :zip_code %>
-  <%= f.text_field :city %>
+  <%= f.text_field :name, placeholder: 'Name' %>
+  <%= f.text_field :address, placeholder: 'Adress' %>
+  <%= f.text_field :price, placeholder: 'Price' %>
   <%= f.file_field :photo,title: "Please choose file"%><%= cl_image_tag @arcade.photo%>
   <%= f.input :photo_cache, as: :hidden %>
   <%= f.submit %>
