@@ -3,20 +3,19 @@ h1{
 }
 
 body .container-all {
-  display: flex;
-  margin: 0;
+  margin: 0 auto;
 }
 
-.card-room {
+.cards-room {
+  height: 150px;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  margin: 10px;
-  height: 100%;
 }
 
 .title {
-   display: flex;
+  display: flex;
   justify-content: space-between;
+  padding: 0 15px;
 }
 
 
@@ -25,21 +24,60 @@ body .container-all {
 }
 
 .infos{
-  display: flex;
   justify-content: space-between;
-  padding: 13px;
+  padding: 8px;
 }
+
+.photo{
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
 .card-room-infos {
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  padding: 16px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
   margin: 10px;
-  }
+  padding: 20px;
+}
 
 .card-room-options {
-display:flex;
-align-self: flex-end;
+  display:flex;
+  align-self: flex-end;
 }
 
 #map {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   margin:10px;
+  border-radius: 5px;
+  height: 100%;
+}
+
+@media screen and (min-width: 900px) {
+  .container-all {
+    display:flex;
+  }
+
+  #map {
+    width: 34%;
+  }
+
+  .card-room {
+    width: 66%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+
+  #map {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .cards-room {
+    grid-template-columns: 1fr;
+  }
+  #map {
+    display: block;
+  }
 }
