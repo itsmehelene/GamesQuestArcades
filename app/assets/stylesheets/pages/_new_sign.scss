@@ -1,0 +1,40 @@
+.signup{
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  z-index: 15;
+  top: 30%;
+  left: 60%;
+  margin: -100px 0 0 -150px;
+
+}
+.field{
+  margin: 5px;
+  .field_input{
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+  }
+}
+.field_button{
+  margin:20px;
+  margin-left:0px;
+}
+.actions{
+  margin:15px;
+  margin-left:40%;
+}
+.act{
+  margin:15px;
+  margin-left:42%;
+}
+.gif{
+  width:500px;
+  margin-left:5%;
+}
+.image{
+  margin: 40px 150px;
+  height:700px;
+}
