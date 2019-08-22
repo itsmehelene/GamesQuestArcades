@@ -1,13 +1,17 @@
-  <h1>Arcades list</h1>
-
 <div class="container-all">
+
+
   <div class="card-room">
+        <form action="<%= root_path %>" method="get" class="form-inline">
+          <input type="text" name="q" class="form-control"  value="<%= params[:q] %>">
+          <input type="submit" value="Search" class="btn btn-primary">
+        </form>
       <% @arcades.each do |arcade| %>
         <div class='card-room-infos'>
 
           <div class='title'>
             <h2><%=arcade.name %></h2>
-            <h2 class="card-room-pricing"><%=arcade.price %>€</h2>
+            <p class="card-room-pricing"><%=arcade.price %>€</p>
           </div>
 
           <div class='infos_options'>
@@ -23,7 +27,8 @@
               </div>
 
               <div class='card-room-options'>
-                <button type="button" class="btn-blue"><%= link_to "See More", arcade_path(arcade) %></button>
+
+                <button type="button" class="btn-blue"><%= link_to "See More >", arcade_path(arcade) %></button>
 
                 <% if policy(arcade).destroy? %>
                 <button type="button" class="btn btn-red"> <%= link_to "Delete", arcade_path(arcade),
@@ -32,7 +37,7 @@
                 <% end %>
 
                 <% if policy(arcade).edit? %>
-                <button type="button" class="btn-yellow"><%= link_to "Edit", edit_arcade_path(arcade) %></button>
+                <button type="button" class="btn btn-yellow"><%= link_to "Edit", edit_arcade_path(arcade) %></button>
                 <% end %>
               </div>
 
