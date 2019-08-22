@@ -1,0 +1,36 @@
+.card-show {
+  background-size: cover;
+  background-position: center;
+  height: 110px;
+  width:50%;
+  color: gray;
+  font-size: 24px;
+  border-left:5px solid #D71B27;
+  margin-top: 50px;
+  padding-left: 15px;
+}
+.btn-flat {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #1EDD88;
+  transition: background 0.3s ease;
+}
+
+.btn-flat:hover {
+  background: #1BCB7F;
+  color: white;
+}
+.card-info{
+  display:flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items:center;
+}
+.category
+{
+  display:flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items:center;
+}
