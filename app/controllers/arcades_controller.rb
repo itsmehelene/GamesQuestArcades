@@ -46,7 +46,7 @@ class ArcadesController < ApplicationController
 
   def destroy
     @arcade.destroy
-    redirect_to arcades_path, notice: 'Arcade was successfully destroyed.'
+    # redirect_to arcades_path, notice: 'Arcade was successfully destroyed.'
   end
 
   def edit
