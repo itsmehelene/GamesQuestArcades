@@ -19,7 +19,7 @@ class ArcadesController < ApplicationController
         lat: arcade.latitude,
         lng: arcade.longitude,
         infoWindow: render_to_string(partial: 'info_window', locals: { arcade: arcade }),
-        image_url: helpers.asset_url('packman.png')
+        image_url: helpers.asset_url('red.png')
       }
     end
   end
