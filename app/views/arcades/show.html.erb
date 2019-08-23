@@ -9,16 +9,6 @@
     ADDRESS:   <%= @arcade.address %><br>
     PRICE:  <%= @arcade.price %>
   </div>
-
-
-  <div class="category">
-    <%= link_to 'Reserve',  new_arcade_reservation_path(@arcade),class:"btn btn-light"  %>
-  </div>
-
-  <h2>
-    <%= pluralize @arcade.reviews.size, "review" %>
-  </h2>
-
   <div id="reviews">
     <% if @arcade.reviews.blank? %>
       Be the first to leave a review for <%= @arcade.name %>
@@ -29,4 +19,15 @@
     <% end %>
   </div>
 </div>
+
+
+  <div class="category">
+    <%= link_to 'Reserve',  new_arcade_reservation_path(@arcade),class:"btn btn-light"  %>
+  </div>
+
+  <h2>
+    <%= pluralize @arcade.reviews.size, "review" %>
+  </h2>
+
+
 <%= render 'reviews/form', arcade: @arcade, review: @review %>

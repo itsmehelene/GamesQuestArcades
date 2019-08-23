@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get :my_profil, to: 'users#show'
   resources :arcades do
     resources :reservations, only: [:new, :create]
-    resources :reviews, only: :create
+    resources :reviews, only: [:create]
   end
   resources :reservations, only: [:index, :show, :destroy]
 end
