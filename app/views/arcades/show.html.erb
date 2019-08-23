@@ -14,4 +14,18 @@
   <div class="category">
     <%= link_to 'Reserve',  new_arcade_reservation_path(@arcade),class:"btn btn-light"  %>
   </div>
+
+  <h2>
+    <%= pluralize @arcade.reviews.size, "review" %>
+  </h2>
+
+  <div id="reviews">
+    <% if @arcade.reviews.blank? %>
+      Be the first to leave a review for <%= @arcade.name %>
+    <% else %>
+      <% @arcade.reviews.each do |review| %>
+        <%= render 'reviews/show', review: review %>
+      <% end %>
+    <% end %>
+  </div>
 </div>
