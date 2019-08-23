@@ -10,6 +10,7 @@ class Arcade < ApplicationRecord
   validates :name, presence: true
   validates :price, presence: true
   validates :photo, presence: true
+  validates :capacity, presence: true
 
   include PgSearch::Model
 
