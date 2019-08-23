@@ -19,6 +19,8 @@ import 'mapbox-gl/dist/mapbox-gl.css'; // <-- you need to uncomment the styleshe
 import { initMapbox } from '../plugins/init_mapbox';
 import { initAutocomplete } from '../plugins/init_autocomplete';
 
+
+
 initMapbox();
 console.log('Hello World from Webpacker')
 
@@ -26,3 +28,9 @@ initAutocomplete();
 
 import "bootstrap";
 
+
+import flatpickr from "flatpickr";
+import 'flatpickr/dist/flatpickr.min.css'
+
+console.log(flatpickr)
+flatpickr(".flatpickr");
