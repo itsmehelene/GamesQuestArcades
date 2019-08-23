@@ -1,14 +1,16 @@
+body.reservations.show {
 $height: 300px;
 .card-show {
   background-size: cover;
   background-position: center;
   height:auto;
-  width:100%;
+  width:50%;
   color: gray;
   font-size: 24px;
   border-left:5px solid #D71B27;
-  margin-top: 10px;
+  margin-top: 40px;
   margin-bottom: 20px;
+  margin-left: 40px;
   padding-left: 5px;
 }
 .btn-flat {
@@ -68,4 +70,5 @@ textarea {
   overflow-style:none;
   padding: 20px;
 
+}
 }

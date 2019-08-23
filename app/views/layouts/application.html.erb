@@ -12,7 +12,10 @@
     <%= stylesheet_pack_tag 'application' %>
   </head>
 
-  <body style="background-color:white;">
+  <body class="<%=controller_name%> <%=action_name%>" style="background-color:white;">
+
+
+ <!--  <body style="background-color:white;"> -->
     <%= render 'shared/navbar' %>
     <div id="page-container">
       <div id="content-wrap">
@@ -26,4 +29,5 @@
     <%= javascript_pack_tag 'application' %>
 
   </body>
+
 </html>
