@@ -1,10 +1,15 @@
-<div class="container">
+<div class="adding">
+  <h1>Create Your Arcade Room</h1>
 <%= simple_form_for [@arcade] do |f| %>
-  <%= f.text_field :name, placeholder: 'Name'%>
-  <%= f.text_field :address, placeholder: 'Adress' %>
-  <%= f.text_field :price, placeholder: 'Price' %>
-  <%= f.input :photo,class:'price' %>
+  <%= f.text_field :name, placeholder: 'Name', class: "field_in"%>
+  <%= f.text_field :address, placeholder: 'Adress', class: "field_in" %>
+  <%= f.text_field :price, placeholder: 'Price', class: "field_in" %>
+  <%= f.input :photo, class: "field_in",label:"Your Arcade's Photo" %>
   <%= f.input :photo_cache, as: :hidden %>
   <%= f.submit %>
 <% end %>
+</div>
+
+<div class="new_photo">
+  <%=image_tag "new.jpg",style:"width: 100%"%>
 </div>
