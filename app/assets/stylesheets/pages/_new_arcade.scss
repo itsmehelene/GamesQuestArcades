@@ -1,0 +1,20 @@
+.adding{
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  z-index: 15;
+  top: 40%;
+  left: 15%;
+  margin: -100px 0 0 -150px;
+  color: white;
+}
+   .field_in{
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+  margin-top: 25px;
+    color: white;
+  }
+
