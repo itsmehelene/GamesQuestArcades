@@ -13,14 +13,14 @@
 
   <div class="row justify-content-center my-5">
     <div class="card-category reservation col-5">
-      <h4>My reservations</h4>
+      <h4>My Reservations</h4>
       <% res = Reservation.where("user_id =#{current_user.id}")%>
       <ul>
       <% res.each do |r|%>
-        <li>you have a reservation at
-        <%=r.arcade.name%> and the date is
-        <%=r.day%>;The price is
-        <%=r.arcade.price%></li>
+        <li>
+        <%=r.arcade.name%> -
+        <%=r.day%> -
+        <%=r.arcade.price%> $</li>
       <%end%>
       </ul>
     </div>
@@ -33,11 +33,13 @@
       <ul>
       <% arcades.each do |arcade|%>
 
-      <li><%= link_to arcade.name, arcade_path(arcade) %>
+      <li data-arcade-id="<%= arcade.id %>"><%= link_to arcade.name, arcade_path(arcade) %>
       <% if policy(arcade).destroy? %>
                   <button type="button" class="btn btn-red"> <%= link_to "Delete", arcade_path(arcade),
                   method: :delete,
-                  data: { confirm: "Are you sure?" } %></button>
+                  data: { confirm: "Are you sure?" },
+                  remote: true
+                   %></button>
                   <% end %>
 
                   <% if policy(arcade).edit? %>

@@ -19,7 +19,7 @@ class ArcadesController < ApplicationController
         lat: arcade.latitude,
         lng: arcade.longitude,
         infoWindow: render_to_string(partial: 'info_window', locals: { arcade: arcade }),
-        image_url: helpers.asset_url('packman.png')
+        image_url: helpers.asset_url('red.png')
       }
     end
   end
@@ -31,6 +31,7 @@ class ArcadesController < ApplicationController
   end
 
   def show
+    @review = Review.new
   end
 
   def create
@@ -46,7 +47,7 @@ class ArcadesController < ApplicationController
 
   def destroy
     @arcade.destroy
-    redirect_to arcades_path, notice: 'Arcade was successfully destroyed.'
+    # redirect_to arcades_path, notice: 'Arcade was successfully destroyed.'
   end
 
   def edit

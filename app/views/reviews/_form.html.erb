@@ -1,0 +1,4 @@
+<%= simple_form_for([ arcade, review ], remote: true) do |form| %>
+  <%= form.input :content, as: :text,label: "Enter your comment" %>
+  <%= form.button :submit,value:"Send it!" %>
+<% end %>
