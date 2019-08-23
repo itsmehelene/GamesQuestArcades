@@ -25,6 +25,7 @@ class ArcadesController < ApplicationController
   end
 
   def new
+    @page = true
     @arcade = Arcade.new
     @arcade.owner = current_user
     authorize @arcade

@@ -11,3 +11,8 @@
 // Your CSS partials
 @import "components/*";
 @import "pages/*";
+
+
+body.users.show{
+  background-image: url('icon.png')
+}
