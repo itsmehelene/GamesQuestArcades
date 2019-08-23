@@ -61,6 +61,7 @@ body .container-all {
     display: block;
     height: calc(100vh - 66px);
     position: sticky;
+    -webkit-position: sticky;
     top: 10px;
   }
 }
