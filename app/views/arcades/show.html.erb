@@ -3,31 +3,36 @@
     <h1><%= @arcade.name %></h1>
   </div>
 </div>
+<div class="container-reviews">
+  <div class="cardo">
+    <div class="card-show">
+      ADDRESS:   <%= @arcade.address %><br>
+      PRICE:  <%= @arcade.price %>
+    </div>
+    <div class="category" style="margin-bottom:30px">
+      <%= link_to 'Reserve',  new_arcade_reservation_path(@arcade),class:"btn btn-light"  %>
+    </div>
+    <div class="comment" >
+      <%= render 'reviews/form', arcade: @arcade, review: @review %>
+      </div>
 
-<div class="cardo">
-  <div class="card-show">
-    ADDRESS:   <%= @arcade.address %><br>
-    PRICE:  <%= @arcade.price %>
+
   </div>
+
   <div id="reviews">
-    <% if @arcade.reviews.blank? %>
-      Be the first to leave a review for <%= @arcade.name %>
-    <% else %>
-      <% @arcade.reviews.each do |review| %>
-        <%= render 'reviews/show', review: review %>
+
+
+      <% if @arcade.reviews.blank? %>
+        Be the first to leave a review for <%= @arcade.name %>
+      <% else %>
+      <h3>Comments</h3>
+      <ul>
+        <% @arcade.reviews.each do |review| %>
+         <li> <%= render 'reviews/show', review: review %></li>
+        <% end %>
+      </ul>
       <% end %>
-    <% end %>
+
   </div>
+
 </div>
-
-
-  <div class="category">
-    <%= link_to 'Reserve',  new_arcade_reservation_path(@arcade),class:"btn btn-light"  %>
-  </div>
-
-  <h2>
-    <%= pluralize @arcade.reviews.size, "review" %>
-  </h2>
-
-
-<%= render 'reviews/form', arcade: @arcade, review: @review %>
