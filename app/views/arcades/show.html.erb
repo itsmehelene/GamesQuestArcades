@@ -6,8 +6,9 @@
 <div class="container-reviews">
   <div class="cardo">
     <div class="card-show">
-      ADDRESS:   <%= @arcade.address %><br>
-      PRICE:  <%= @arcade.price %>
+      Address :   <%= @arcade.address %><br>
+      Price:  <%= @arcade.price %> $<br>
+      Capacity:  <%= @arcade.capacity %>
     </div>
     <div class="category" style="margin-bottom:30px">
       <%= link_to 'Reserve',  new_arcade_reservation_path(@arcade),class:"btn btn-light"  %>
