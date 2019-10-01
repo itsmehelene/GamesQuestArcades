@@ -6,7 +6,7 @@ body .container-all {
 .title {
   display: flex;
   justify-content: space-between;
-  padding: 0 15px;
+  
 }
 
 .infos {
@@ -31,7 +31,7 @@ body .container-all {
   align-self: flex-end;
 }
 
-  #map {
+#map {
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   margin:10px;
   border-radius: 5px;
@@ -39,13 +39,13 @@ body .container-all {
 
 //Mediaqueries => responsive
 
-@media screen and (min-width: 1550px) {
+@media screen and (min-width: 1250px) {
   .container-all {
     display:flex;
   }
 
   .card-room {
-    width: 66%;
+    width: 55%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     align-items: start;
@@ -57,9 +57,9 @@ body .container-all {
   }
 
    #map {
-    width: 34%;
+    width: 45%;
     display: block;
-    height: calc(100vh - 66px);
+    height: calc(90vh - 66px);
     position: sticky;
     -webkit-position: sticky;
     top: 10px;
