@@ -1,3 +1,6 @@
+.pic{
+  background-image: url('background.jpg')
+}
 .signup{
   position: absolute;
   width: 500px;
@@ -5,7 +8,7 @@
   z-index: 15;
   top: 30%;
   left: 60%;
-  margin: -100px 0 0 -150px;
+  margin: -150px 0 0 -75px;
 
 }
 .field{
@@ -36,5 +39,5 @@
 }
 .image{
   margin: 40px 150px;
-  height:700px;
+  height: 600px;
 }
